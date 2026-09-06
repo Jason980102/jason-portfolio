@@ -1,0 +1,195 @@
+{
+    "profile": {
+        "name": "Jason Chen",
+        "location": "New York, NY",
+        "current_status": "M.S. Computer Science student at NYU Courant",
+        "interests": [
+            "AI Engineering",
+            "Software Engineering",
+            "Cloud Computing",
+            "Machine Learning",
+            "Backend Development"
+        ]
+    },
+    "education": [
+        {
+            "school": "New York University",
+            "institute": "Courant Institute of Mathematical Sciences",
+            "degree": "Master of Science in Computer Science",
+            "start": "September 2025"
+        },
+        {
+            "school": "University of Taipei",
+            "degree": "Bachelor of Science in Computer Science",
+            "start": "September 2021",
+            "end": "February 2025",
+            "gpa": "3.84/4.0"
+        }
+    ],
+    "skills": {
+        "languages": [
+            "Python",
+            "Java",
+            "JavaScript",
+            "SQL"
+        ],
+        "backend": [
+            "Flask",
+            "Flask-RESTX",
+            "REST APIs",
+            "PostgreSQL"
+        ],
+        "ai_ml": [
+            "scikit-learn",
+            "TensorFlow",
+            "Keras",
+            "MediaPipe",
+            "OpenPose",
+            "OpenCV",
+            "Pandas",
+            "NumPy"
+        ],
+        "cloud_devops": [
+            "AWS EC2",
+            "AWS S3",
+            "Oracle Cloud",
+            "Docker",
+            "Kubernetes",
+            "OpenShift",
+            "Tekton",
+            "CI/CD"
+        ],
+        "tools": [
+            "Git",
+            "GitHub",
+            "Linux",
+            "pytest",
+            "Selenium",
+            "Swagger",
+            "OpenAPI"
+        ]
+    },
+    "projects": [
+        {
+            "name": "Cloud-Based Intelligent Taekwondo Motion Classification System",
+            "category": [
+                "AI",
+                "Machine Learning",
+                "Computer Vision",
+                "Cloud"
+            ],
+            "technologies": [
+                "Python",
+                "MediaPipe",
+                "OpenCV",
+                "scikit-learn",
+                "Streamlit",
+                "AWS EC2",
+                "AWS S3",
+                "Oracle Cloud"
+            ],
+            "description": "Built an end-to-end AI system that analyzes taekwondo videos using pose estimation and machine learning.",
+            "highlights": [
+                "Built video preprocessing, pose extraction, feature engineering, model training, and inference workflows",
+                "Trained a Random Forest classifier on more than 400 labeled motion samples",
+                "Classified five taekwondo kick categories",
+                "Achieved more than 90 percent cross-validation accuracy",
+                "Deployed a Streamlit inference application on AWS EC2",
+                "Integrated AWS S3 and Oracle Object Storage"
+            ],
+            "github": "https://github.com/Jason980102/cloud-mediapipe-pose-analysis"
+        },
+        {
+            "name": "Promotions Microservice with CI/CD Deployment Pipeline",
+            "category": [
+                "Software Engineering",
+                "Backend",
+                "DevOps"
+            ],
+            "technologies": [
+                "Python",
+                "Flask",
+                "Flask-RESTX",
+                "PostgreSQL",
+                "Docker",
+                "Kubernetes",
+                "OpenShift",
+                "Tekton",
+                "pytest",
+                "Behave",
+                "Selenium"
+            ],
+            "description": "Developed a RESTful promotions management microservice and contributed to automated testing and deployment workflows.",
+            "highlights": [
+                "Implemented REST API endpoints and service actions",
+                "Added Swagger and OpenAPI documentation",
+                "Implemented automated unit and BDD testing",
+                "Worked on Tekton CI/CD pipelines",
+                "Deployed and tested the application using OpenShift and Kubernetes",
+                "Project test coverage reached approximately 98 percent"
+            ],
+            "github": "https://github.com/CSCI-GA-2820-SP26-003/promotions"
+        },
+        {
+            "name": "Subway Congestion Decision Support Platform",
+            "category": [
+                "Database",
+                "Machine Learning",
+                "Data Engineering"
+            ],
+            "technologies": [
+                "Python",
+                "PostgreSQL",
+                "Streamlit",
+                "scikit-learn"
+            ],
+            "description": "Built an NYU-area subway congestion decision support application using historical MTA ridership data.",
+            "highlights": [
+                "Loaded and validated hourly MTA ridership observations in PostgreSQL",
+                "Used a persisted Random Forest model for congestion prediction",
+                "Generated commuter recommendations based on predictions",
+                "Stored predictions, recommendations, and user decisions in PostgreSQL"
+            ],
+            "github": "https://github.com/Jason980102/subway-congestion-platform"
+        },
+        {
+            "name": "Human Activity Recognition Using CNN and Sensor Data",
+            "category": [
+                "Machine Learning",
+                "Deep Learning"
+            ],
+            "technologies": [
+                "Python",
+                "TensorFlow",
+                "Keras",
+                "NumPy",
+                "Pandas"
+            ],
+            "description": "Developed a CNN-based human activity recognition system using motion sensor data.",
+            "highlights": [
+                "Processed multi-subject sensor data using overlapping windows",
+                "Evaluated classification performance using confusion matrices and validation metrics",
+                "Improved classification accuracy from approximately 72 percent to 97 percent"
+            ]
+        }
+    ],
+    "experience": [
+        {
+            "title": "Frontend Design Intern",
+            "company": "Jessie Tech Co., Ltd.",
+            "period": "August 2023 - September 2023",
+            "highlights": [
+                "Collaborated with a UX/UI team on data organization and 3D model testing",
+                "Worked with React and JavaScript"
+            ]
+        },
+        {
+            "title": "Teaching Assistant, Student Buddy Program",
+            "organization": "University of Taipei",
+            "period": "November 2024 - December 2024",
+            "highlights": [
+                "Tutored peers on coursework related to Introduction to Computer Science"
+            ]
+        }
+    ]
+}
