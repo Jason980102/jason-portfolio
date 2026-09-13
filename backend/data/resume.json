@@ -3,6 +3,13 @@
         "name": "Jason Chen",
         "location": "New York, NY",
         "current_status": "M.S. Computer Science student at NYU Courant",
+        "headline": "AI Systems · Cloud Computing · Full-Stack Development",
+        "summary": "I build AI-powered applications, cloud-based systems, and scalable backend services that combine machine learning, data pipelines, and modern software engineering.",
+        "about": "My work focuses on building useful systems across AI, backend engineering, and cloud deployment. I am especially interested in projects that combine machine learning, APIs, data pipelines, and clean user-facing interfaces.",
+        "email": "jason980102@gmail.com",
+        "github": "https://github.com/Jason980102",
+        "linkedin": "https://www.linkedin.com/in/jason-chen-030669381/",
+        "resume_file": "/Jason_Chen_Resume.pdf",
         "interests": [
             "AI Engineering",
             "Software Engineering",
@@ -16,14 +23,15 @@
             "school": "New York University",
             "institute": "Courant Institute of Mathematical Sciences",
             "degree": "Master of Science in Computer Science",
-            "start": "September 2025"
+            "start": "September 2025",
+            "end": "Present"
         },
         {
             "school": "University of Taipei",
             "degree": "Bachelor of Science in Computer Science",
             "start": "September 2021",
             "end": "February 2025",
-            "gpa": "3.84/4.0"
+            "gpa": "3.84 / 4.0"
         }
     ],
     "skills": {
@@ -33,13 +41,23 @@
             "JavaScript",
             "SQL"
         ],
+        "frontend": [
+            "React",
+            "Next.js",
+            "TypeScript",
+            "Tailwind CSS",
+            "Streamlit"
+        ],
         "backend": [
             "Flask",
             "Flask-RESTX",
+            "FastAPI",
             "REST APIs",
             "PostgreSQL"
         ],
         "ai_ml": [
+            "Machine Learning",
+            "Computer Vision",
             "scikit-learn",
             "TensorFlow",
             "Keras",
@@ -47,7 +65,8 @@
             "OpenPose",
             "OpenCV",
             "Pandas",
-            "NumPy"
+            "NumPy",
+            "Ollama"
         ],
         "cloud_devops": [
             "AWS EC2",
@@ -57,7 +76,8 @@
             "Kubernetes",
             "OpenShift",
             "Tekton",
-            "CI/CD"
+            "CI/CD",
+            "Tailscale"
         ],
         "tools": [
             "Git",
@@ -69,8 +89,54 @@
             "OpenAPI"
         ]
     },
+    "experience": [
+        {
+            "title": "Frontend Design Intern",
+            "company": "Jessie Tech Co., Ltd.",
+            "period": "August 2023 - September 2023",
+            "highlights": [
+                "Collaborated with a UX/UI team on data organization and 3D model testing",
+                "Worked with React and JavaScript"
+            ]
+        },
+        {
+            "title": "Teaching Assistant, Student Buddy Program",
+            "organization": "University of Taipei",
+            "period": "November 2024 - December 2024",
+            "highlights": [
+                "Tutored peers on coursework related to Introduction to Computer Science"
+            ]
+        }
+    ],
     "projects": [
         {
+            "id": "ai-portfolio-assistant",
+            "name": "AI-Powered Personal Portfolio Assistant",
+            "category": [
+                "AI",
+                "Full Stack",
+                "Backend",
+                "Self-Hosted"
+            ],
+            "technologies": [
+                "Next.js",
+                "TypeScript",
+                "FastAPI",
+                "Ollama",
+                "qwen3:4b",
+                "Tailscale"
+            ],
+            "description": "Built a self-hosted AI portfolio assistant that answers resume-grounded questions using a locally hosted language model.",
+            "highlights": [
+                "Built a responsive Next.js portfolio with an integrated AI chat interface",
+                "Developed a FastAPI backend connected to a locally hosted qwen3:4b model through Ollama",
+                "Implemented structured context routing and source navigation for resume-grounded responses",
+                "Published the self-hosted application through a secure HTTPS Tailscale Funnel"
+            ],
+            "github": "https://github.com/Jason980102/jason-portfolio"
+        },
+        {
+            "id": "cloud-taekwondo",
             "name": "Cloud-Based Intelligent Taekwondo Motion Classification System",
             "category": [
                 "AI",
@@ -100,6 +166,7 @@
             "github": "https://github.com/Jason980102/cloud-mediapipe-pose-analysis"
         },
         {
+            "id": "promotions-microservice",
             "name": "Promotions Microservice with CI/CD Deployment Pipeline",
             "category": [
                 "Software Engineering",
@@ -131,6 +198,7 @@
             "github": "https://github.com/CSCI-GA-2820-SP26-003/promotions"
         },
         {
+            "id": "subway-congestion-platform",
             "name": "Subway Congestion Decision Support Platform",
             "category": [
                 "Database",
@@ -153,6 +221,30 @@
             "github": "https://github.com/Jason980102/subway-congestion-platform"
         },
         {
+            "id": "imdb-youtube-analytics",
+            "name": "IMDb & YouTube Movie Trailer Analytics",
+            "category": [
+                "Big Data",
+                "Analytics",
+                "Distributed Systems"
+            ],
+            "technologies": [
+                "Google Dataproc",
+                "HDFS",
+                "Hive",
+                "Trino",
+                "Python",
+                "SQL"
+            ],
+            "description": "Built a big data analytics pipeline that processed IMDb and YouTube trailer datasets to analyze ratings, sentiment, and movie-related trends.",
+            "highlights": [
+                "Processed large-scale movie datasets using distributed systems",
+                "Built analytics workflows using Hive and Trino",
+                "Used Python and SQL for data processing and analysis"
+            ]
+        },
+        {
+            "id": "human-activity-recognition",
             "name": "Human Activity Recognition Using CNN and Sensor Data",
             "category": [
                 "Machine Learning",
@@ -171,24 +263,27 @@
                 "Evaluated classification performance using confusion matrices and validation metrics",
                 "Improved classification accuracy from approximately 72 percent to 97 percent"
             ]
-        }
-    ],
-    "experience": [
-        {
-            "title": "Frontend Design Intern",
-            "company": "Jessie Tech Co., Ltd.",
-            "period": "August 2023 - September 2023",
-            "highlights": [
-                "Collaborated with a UX/UI team on data organization and 3D model testing",
-                "Worked with React and JavaScript"
-            ]
         },
         {
-            "title": "Teaching Assistant, Student Buddy Program",
-            "organization": "University of Taipei",
-            "period": "November 2024 - December 2024",
+            "id": "nstc-research",
+            "name": "NSTC Undergraduate Research Project",
+            "category": [
+                "Research",
+                "Computer Vision",
+                "Sports Analytics"
+            ],
+            "technologies": [
+                "Python",
+                "MediaPipe",
+                "OpenPose",
+                "Computer Vision",
+                "PWA"
+            ],
+            "description": "Built a computer vision research system that transformed taekwondo videos into measurable athlete performance metrics.",
             "highlights": [
-                "Tutored peers on coursework related to Introduction to Computer Science"
+                "Selected as an NSTC undergraduate research project",
+                "Analyzed athlete stability, consistency, and explosiveness from videos",
+                "Combined pose estimation with athlete performance analytics"
             ]
         }
     ]
