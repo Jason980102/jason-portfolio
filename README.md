@@ -2,6 +2,10 @@
 
 An interactive personal portfolio with a locally hosted AI assistant that answers questions about my skills, education, experience, and projects.
 
+**Live Portfolio:** [jason-portfolio-blond.vercel.app](https://jason-portfolio-blond.vercel.app/)
+
+> The portfolio frontend is publicly deployed on Vercel. AI assistant functionality requires the FastAPI/Ollama backend to be running.
+
 Instead of only browsing through a traditional portfolio or resume, visitors can directly ask questions such as:
 
 - What are Jason's strongest skills?
