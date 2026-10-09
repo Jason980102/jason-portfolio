@@ -116,22 +116,22 @@
                 "AI",
                 "Full Stack",
                 "Backend",
-                "Self-Hosted"
+                "Cloud"
             ],
             "technologies": [
                 "Next.js",
                 "TypeScript",
+                "Vercel",
+                "Gemini API",
                 "FastAPI",
-                "Ollama",
-                "qwen3:4b",
-                "Tailscale"
+                "Ollama"
             ],
-            "description": "Built a self-hosted AI portfolio assistant that answers resume-grounded questions using a locally hosted language model.",
+            "description": "Built an AI portfolio assistant that answers resume-grounded questions with source navigation. The current cloud deployment uses a server-side Next.js API route on Vercel with Gemini; the original prototype used FastAPI and Ollama.",
             "highlights": [
                 "Built a responsive Next.js portfolio with an integrated AI chat interface",
-                "Developed a FastAPI backend connected to a locally hosted qwen3:4b model through Ollama",
-                "Implemented structured context routing and source navigation for resume-grounded responses",
-                "Published the self-hosted application through a secure HTTPS Tailscale Funnel"
+                "Migrated AI inference from a local FastAPI/Ollama prototype to the Gemini cloud API on Vercel",
+                "Implemented resume-grounded responses with validated portfolio source references",
+                "Kept API credentials server-side and added request limits, timeouts, and clear error handling"
             ],
             "github": "https://github.com/Jason980102/jason-portfolio"
         },

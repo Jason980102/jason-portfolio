@@ -12,6 +12,7 @@ type Message = {
     role: "user" | "assistant";
     content: string;
     source?: Source | null;
+    sources?: Source[];
 };
 
 export default function AIChat() {
@@ -31,6 +32,8 @@ export default function AIChat() {
         },
     ]);
     const [loading, setLoading] = useState(false);
+    const sendingRef = useRef(false);
+    const [failedQuestion, setFailedQuestion] = useState<string | null>(null);
 
     const messagesEndRef = useRef<HTMLDivElement | null>(null);
 
@@ -43,7 +46,9 @@ export default function AIChat() {
     const sendMessage = async (questionOverride?: string) => {
         const question = (questionOverride ?? input).trim();
 
-        if (!question || loading) return;
+        if (!question || sendingRef.current) return;
+        sendingRef.current = true;
+        setFailedQuestion(null);
 
         const userMessage: Message = {
             role: "user",
@@ -57,6 +62,7 @@ export default function AIChat() {
         try {
             const response = await fetch("/api/chat", {
                 method: "POST",
+                signal: AbortSignal.timeout(30000),
                 headers: {
                     "Content-Type": "application/json",
                 },
@@ -65,31 +71,37 @@ export default function AIChat() {
                 }),
             });
 
-            if (!response.ok) {
-                throw new Error(`API error: ${response.status}`);
-            }
-
             const data = await response.json();
+            if (!response.ok) {
+                throw new Error(data.error || "The assistant is unavailable. Please try again shortly.");
+            }
+            if (typeof data.answer !== "string" || !data.answer.trim()) {
+                throw new Error("The assistant returned an incomplete answer. Please try again.");
+            }
 
             const assistantMessage: Message = {
                 role: "assistant",
                 content: data.answer,
                 source: data.source ?? null,
+                sources: data.sources ?? [],
             };
 
             setMessages((prev) => [...prev, assistantMessage]);
         } catch (error) {
-            console.error(error);
+            setFailedQuestion(question);
 
             setMessages((prev) => [
                 ...prev,
                 {
                     role: "assistant",
                     content:
-                        "Sorry, I couldn't reach the AI service right now. Please try again.",
+                        error instanceof Error && error.name !== "TimeoutError"
+                            ? error.message
+                            : "The assistant took too long. Please retry or contact Jason directly.",
                 },
             ]);
         } finally {
+            sendingRef.current = false;
             setLoading(false);
         }
     };
@@ -225,11 +237,12 @@ export default function AIChat() {
                                     </p>
 
                                     {message.role === "assistant" &&
-                                        message.source && (
+                                        (message.sources?.length ? message.sources : message.source ? [message.source] : []).map((source) => (
                                             <button
+                                                key={source.section}
                                                 onClick={() =>
                                                     handleViewSource(
-                                                        message.source!
+                                                        source
                                                     )
                                                 }
                                                 className="
@@ -257,10 +270,10 @@ export default function AIChat() {
                                                 </span>
 
                                                 <span className="min-w-0 break-words text-gray-400">
-                                                    · {message.source.label}
+                                                    · {source.label}
                                                 </span>
                                             </button>
-                                        )}
+                                        ))}
                                 </div>
                             </div>
                         ))}
@@ -322,15 +335,24 @@ export default function AIChat() {
                     </div>
 
                     {/* Input */}
+                    {failedQuestion && !loading && (
+                        <div className="flex flex-wrap gap-3 px-4 pb-3 text-sm text-gray-700">
+                            <button onClick={() => sendMessage(failedQuestion)} className="rounded-lg border px-3 py-2">Retry</button>
+                            <a href="#projects" onClick={() => setIsOpen(false)} className="rounded-lg border px-3 py-2">View projects</a>
+                            <a href="#contact" onClick={() => setIsOpen(false)} className="rounded-lg border px-3 py-2">Contact Jason</a>
+                        </div>
+                    )}
                     <div className="shrink-0 border-t border-gray-200 p-3">
                         <div className="flex min-w-0 items-center gap-2">
                             <input
+                                aria-label="Question about Jason"
+                                maxLength={1000}
                                 value={input}
                                 onChange={(event) =>
                                     setInput(event.target.value)
                                 }
                                 onKeyDown={(event) => {
-                                    if (event.key === "Enter") {
+                                    if (event.key === "Enter" && !event.nativeEvent.isComposing) {
                                         sendMessage();
                                     }
                                 }}
