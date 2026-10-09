@@ -112,7 +112,7 @@ export async function POST(request: NextRequest) {
     const options = {
       method: "POST",
       headers: { "Content-Type": "application/json", "x-goog-api-key": key },
-      cache: "no-store",
+      cache: "no-store" as const,
       signal: AbortSignal.timeout(20000),
       body: JSON.stringify({
         systemInstruction: { parts: [{ text: instruction }] },
