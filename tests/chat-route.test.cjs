@@ -89,6 +89,18 @@ test('rejects fabricated source references, truncated answers and malformed prov
   assert.equal((await response.json()).source, null);
 });
 
+test('retries transient provider failure once within the same deadline', async () => {
+  let calls = 0;
+  let signal;
+  const post = route(async (_, options) => {
+    if (!signal) signal = options.signal;
+    assert.equal(options.signal, signal);
+    return ++calls === 1 ? new Response('busy', { status: 503 }) : answer();
+  });
+  assert.equal((await post(request())).status, 200);
+  assert.equal(calls, 2);
+});
+
 test('ten requests per client per warm instance; rejection occurs before inference', async () => {
   let calls = 0;
   const post = route(async () => { calls++; return answer(); });

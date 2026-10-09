@@ -108,7 +108,8 @@ export async function POST(request: NextRequest) {
   if (active >= 4) return error("The assistant is busy. Please try again in a minute.", 429, true);
   active++;
   try {
-    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`, {
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`;
+    const options = {
       method: "POST",
       headers: { "Content-Type": "application/json", "x-goog-api-key": key },
       cache: "no-store",
@@ -127,7 +128,16 @@ export async function POST(request: NextRequest) {
           },
         },
       }),
-    });
+    };
+    let response = await fetch(url, options);
+    // One retry for transient service failures, sharing the original 20s deadline.
+    // Never retry quota, authentication, or model configuration errors.
+    if (response.status >= 500) {
+      await response.body?.cancel();
+      await new Promise((resolve) => setTimeout(resolve, 300));
+      options.signal.throwIfAborted();
+      response = await fetch(url, options);
+    }
     // Never expose or log upstream response bodies, prompts, or credentials.
     if (!response.ok) {
       console.warn("Portfolio AI provider status:", response.status);
