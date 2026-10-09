@@ -32,7 +32,7 @@ function answer(sourceIds = ['skills', 'cloud-taekwondo']) {
 
 test('cloud request carries resume evidence, private key, deadline and valid references', async () => {
   const post = route(async (url, options) => {
-    assert.equal(url, 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent');
+    assert.equal(url, 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent');
     assert.equal(options.headers['x-goog-api-key'], 'test-secret');
     assert.ok(options.signal instanceof AbortSignal);
     const body = JSON.parse(options.body);

@@ -101,7 +101,7 @@ export async function POST(request: NextRequest) {
     return error("Enter a question of up to 1,000 characters.", 400);
   }
   const key = process.env.GEMINI_API_KEY?.trim();
-  const model = process.env.GEMINI_MODEL?.trim() || "gemini-2.5-flash-lite";
+  const model = process.env.GEMINI_MODEL?.trim() || "gemini-3.5-flash-lite";
   if (!key || !/^gemini-[a-z0-9.-]+$/.test(model)) {
     return error("The assistant is being configured. Please view Jason's projects or contact him directly.", 503);
   }
@@ -117,7 +117,7 @@ export async function POST(request: NextRequest) {
         systemInstruction: { parts: [{ text: instruction }] },
         contents: [{ role: "user", parts: [{ text: body.message.trim() }] }],
         generationConfig: {
-          temperature: 0.2, maxOutputTokens: 700, responseMimeType: "application/json",
+          maxOutputTokens: 1400, responseMimeType: "application/json",
           responseSchema: {
             type: "OBJECT", required: ["answer", "sourceIds"],
             properties: {

@@ -15,7 +15,7 @@ or localhost endpoint. `backend/main.py` is retained as the historical local pro
    Under Settings > Environment Variables add `GEMINI_API_KEY` with the key as its
    value. Choose Secret when available, and enable Production and Preview.
    Never prefix this variable with `NEXT_PUBLIC_`, put it in GitHub, or share it in chat.
-3. Optional: set `GEMINI_MODEL=gemini-2.5-flash-lite`; this is already the default.
+3. Optional: set `GEMINI_MODEL=gemini-3.5-flash-lite`; this is already the default.
 4. Deploy the updated `main` branch. If its deployment finished before you saved
    the variable, use Deployments > latest production deployment > Redeploy.
    Environment changes only take effect on new deployments.
@@ -30,8 +30,8 @@ Official setup references:
 - https://ai.google.dev/gemini-api/docs/pricing
 - https://vercel.com/docs/environment-variables
 
-Gemini 2.5 Flash-Lite is listed with free-tier input/output and paid standard text
-pricing of $0.10 per million input tokens and $0.40 per million output tokens
+Gemini 3.5 Flash-Lite is listed with free-tier input/output and paid standard text
+pricing of $0.30 per million input tokens and $2.50 per million output tokens
 (checked October 9, 2026). Account eligibility and quota vary; inspect AI Studio's
 Rate Limit and Billing screens. Free-tier prompts may be used to improve Google's
 products. The assistant sends public resume evidence and the visitor's question.
