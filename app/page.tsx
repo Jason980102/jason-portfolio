@@ -1,12 +1,12 @@
 import React from "react";
 import AIChat from "@/components/AIChat";
+import ProjectsTimeline from "@/components/ProjectsTimeline";
 import resumeData from "@/backend/data/resume.json";
 
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 import {
   Mail,
-  ExternalLink,
   Download,
   MapPin,
   GraduationCap,
@@ -168,6 +168,8 @@ export default function Portfolio() {
           />
         </div>
       </section>
+
+      <ProjectsTimeline projects={projects} />
 
       {/* About */}
       <section
@@ -335,80 +337,6 @@ export default function Portfolio() {
                 ))}
               </ul>
             </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Projects */}
-      <section
-        id="projects"
-        className="mx-auto max-w-6xl scroll-mt-24 px-6 py-20"
-      >
-        <div className="mb-10 flex items-end justify-between gap-4">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-widest text-slate-500">
-              Selected Work
-            </p>
-
-            <h2 className="mt-2 text-3xl font-bold text-white">
-              Projects
-            </h2>
-          </div>
-        </div>
-
-        <div className="grid gap-6 md:grid-cols-2">
-          {projects.map((project) => (
-            <article
-              id={project.id}
-              key={project.id}
-              className="scroll-mt-24 rounded-3xl border border-slate-800 bg-slate-900/60 p-7 shadow-2xl shadow-black/20 transition hover:-translate-y-1 hover:border-slate-600"
-            >
-              <p className="mb-3 text-sm font-medium text-slate-400">
-                {project.category.join(" / ")}
-              </p>
-
-              <h3 className="text-2xl font-bold text-white">
-                {project.name}
-              </h3>
-
-              <p className="mt-4 leading-7 text-slate-400">
-                {project.description}
-              </p>
-
-              <div className="mt-5 flex flex-wrap gap-2">
-                {project.technologies.map((item) => (
-                  <span
-                    key={item}
-                    className="rounded-full bg-slate-800 px-3 py-1 text-sm text-slate-300"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
-
-              <ul className="mt-5 space-y-2 text-sm text-slate-400">
-                {project.highlights.map((item) => (
-                  <li
-                    key={item}
-                    className="leading-6"
-                  >
-                    • {item}
-                  </li>
-                ))}
-              </ul>
-
-              {"github" in project && project.github && (
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-white transition hover:text-slate-300"
-                >
-                  View details
-                  <ExternalLink className="h-4 w-4" />
-                </a>
-              )}
-            </article>
           ))}
         </div>
       </section>

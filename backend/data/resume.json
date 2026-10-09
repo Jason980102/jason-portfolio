@@ -110,6 +110,114 @@
     ],
     "projects": [
         {
+            "id": "ado-fan-hub",
+            "name": "Ado Fan Hub (In Development)",
+            "category": [
+                "Mobile",
+                "Full Stack",
+                "In Development"
+            ],
+            "technologies": [
+                "React Native",
+                "Expo",
+                "TypeScript",
+                "Expo Router"
+            ],
+            "description": "Developing a free, unofficial, mobile-first fan companion for iOS, Android, and Web. The project is in early development; news aggregation, notifications, merchandise tracking, and multilingual interfaces are planned features, not a launched service.",
+            "highlights": [
+                "Initialized an Expo mobile application and verified its Web development environment",
+                "Planning official news updates, concert reminders, merchandise release and restock tracking, and personalized notifications",
+                "Planning Japanese, English, and Traditional Chinese interfaces with region and time zone preferences",
+                "FastAPI and PostgreSQL or Supabase are planned backend options; mobile device testing and a public beta remain on the roadmap"
+            ],
+            "start": "2026-10",
+            "end": "Present",
+            "status": "In development"
+        },
+        {
+            "id": "audio-visual-video-reasoning",
+            "name": "Audio-Visual Reasoning for Video Understanding",
+            "category": [
+                "Computer Vision",
+                "Multimodal AI",
+                "Research"
+            ],
+            "technologies": [
+                "Qwen3-Omni-30B",
+                "video-SALMONN 2",
+                "VGGSound",
+                "AVQA",
+                "AVE",
+                "LoRA (planned)"
+            ],
+            "description": "An ongoing NYU Computer Vision research project investigating how multimodal models combine visual and auditory evidence, especially when sound sources are off-screen or occluded and temporal alignment is essential. Benchmarking and improvement methods are planned; no completed results are claimed.",
+            "highlights": [
+                "Planning error analysis of visual shortcuts, hallucinations, unseen sound sources, and audio-visual temporal relationships",
+                "Planning comparisons of audio-plus-video, video-only, audio-only, and mismatched or time-shifted audio conditions",
+                "Planning a curated or synthesized evaluation set organized by identified failure cases",
+                "Exploring training-free alignment and evidence reconciliation, alongside potential LoRA fine-tuning and representation analysis"
+            ],
+            "start": "2026-09",
+            "end": "Present",
+            "status": "In development"
+        },
+        {
+            "id": "llm-cuda-config-optimizer",
+            "name": "LLM-Based CUDA Configuration Optimizer (In Progress)",
+            "category": [
+                "AI",
+                "GPU Computing",
+                "Course Project",
+                "In Progress"
+            ],
+            "technologies": [
+                "CUDA",
+                "C/C++",
+                "Python",
+                "NVIDIA GPUs",
+                "LLMs"
+            ],
+            "description": "An NYU GPUs: Architecture and Programming team project investigating whether LLMs can recommend effective CUDA grid and block launch configurations. The work is in progress; experimental results have not yet been reported in the project README.",
+            "highlights": [
+                "Planning an automated workflow comparing LLM launch recommendations with empirical configuration sweeps",
+                "Targeting at least 20 CUDA benchmark programs across multiple problem sizes; this is the planned evaluation scope",
+                "Studying how kernel code, problem size, GPU specifications, and prompt detail affect recommendations",
+                "Planning runtime and performance-gap analysis using the NYU CIMS CUDA computing environment"
+            ],
+            "start": "2026-09",
+            "end": "Present",
+            "status": "In development"
+        },
+        {
+            "id": "ai-secure-software-advisor",
+            "name": "AI Secure Software Advisor",
+            "category": [
+                "Security",
+                "AI",
+                "Backend"
+            ],
+            "technologies": [
+                "Python",
+                "FastAPI",
+                "OSV",
+                "PyPI",
+                "Ollama",
+                "OpenAI API",
+                "GitHub Actions"
+            ],
+            "description": "Built a local MVP for scanning pinned Python dependencies for known vulnerabilities and proposing upgrade candidates checked against OSV, PyPI metadata, and target Python and wheel compatibility. Optional AI explanations summarize structured scan evidence.",
+            "highlights": [
+                "Implemented batch vulnerability scans with CVE/GHSA/PYSEC alias deduplication and CVSS severity evidence",
+                "Verified upgrade candidates against package release metadata, target wheel tags, and a second OSV query",
+                "Added optional direct dependency checks, downloadable upgrade drafts, and a five-language web interface",
+                "Integrated optional local Ollama or cloud OpenAI explanations; the scanner works independently of AI"
+            ],
+            "github": "https://github.com/Jason980102/ai-secure-software-advisor",
+            "start": "2026-08",
+            "end": "Present",
+            "status": "In development"
+        },
+        {
             "id": "ai-portfolio-assistant",
             "name": "AI-Powered Personal Portfolio Assistant",
             "category": [
@@ -133,7 +241,36 @@
                 "Implemented resume-grounded responses with validated portfolio source references",
                 "Kept API credentials server-side and added request limits, timeouts, and clear error handling"
             ],
-            "github": "https://github.com/Jason980102/jason-portfolio"
+            "github": "https://github.com/Jason980102/jason-portfolio",
+            "start": "2026-08",
+            "end": "2026-08",
+            "status": "Completed"
+        },
+        {
+            "id": "subway-congestion-platform",
+            "name": "Subway Congestion Decision Support Platform",
+            "category": [
+                "Database",
+                "Machine Learning",
+                "Data Engineering"
+            ],
+            "technologies": [
+                "Python",
+                "PostgreSQL",
+                "Streamlit",
+                "scikit-learn"
+            ],
+            "description": "Built an NYU-area subway congestion decision support application using historical MTA ridership data.",
+            "highlights": [
+                "Loaded and validated hourly MTA ridership observations in PostgreSQL",
+                "Used a persisted Random Forest model for congestion prediction",
+                "Generated commuter recommendations based on predictions",
+                "Stored predictions, recommendations, and user decisions in PostgreSQL"
+            ],
+            "github": "https://github.com/Jason980102/subway-congestion-platform",
+            "start": "2026-05",
+            "end": "2026-08",
+            "status": "Completed"
         },
         {
             "id": "cloud-taekwondo",
@@ -163,7 +300,10 @@
                 "Deployed a Streamlit inference application on AWS EC2",
                 "Integrated AWS S3 and Oracle Object Storage"
             ],
-            "github": "https://github.com/Jason980102/cloud-mediapipe-pose-analysis"
+            "github": "https://github.com/Jason980102/cloud-mediapipe-pose-analysis",
+            "start": "2026-03",
+            "end": "2026-05",
+            "status": "Completed"
         },
         {
             "id": "promotions-microservice",
@@ -195,30 +335,10 @@
                 "Deployed and tested the application using OpenShift and Kubernetes",
                 "Project test coverage reached approximately 98 percent"
             ],
-            "github": "https://github.com/CSCI-GA-2820-SP26-003/promotions"
-        },
-        {
-            "id": "subway-congestion-platform",
-            "name": "Subway Congestion Decision Support Platform",
-            "category": [
-                "Database",
-                "Machine Learning",
-                "Data Engineering"
-            ],
-            "technologies": [
-                "Python",
-                "PostgreSQL",
-                "Streamlit",
-                "scikit-learn"
-            ],
-            "description": "Built an NYU-area subway congestion decision support application using historical MTA ridership data.",
-            "highlights": [
-                "Loaded and validated hourly MTA ridership observations in PostgreSQL",
-                "Used a persisted Random Forest model for congestion prediction",
-                "Generated commuter recommendations based on predictions",
-                "Stored predictions, recommendations, and user decisions in PostgreSQL"
-            ],
-            "github": "https://github.com/Jason980102/subway-congestion-platform"
+            "github": "https://github.com/CSCI-GA-2820-SP26-003/promotions",
+            "start": "2026-03",
+            "end": "2026-05",
+            "status": "Completed"
         },
         {
             "id": "imdb-youtube-analytics",
@@ -241,28 +361,10 @@
                 "Processed large-scale movie datasets using distributed systems",
                 "Built analytics workflows using Hive and Trino",
                 "Used Python and SQL for data processing and analysis"
-            ]
-        },
-        {
-            "id": "human-activity-recognition",
-            "name": "Human Activity Recognition Using CNN and Sensor Data",
-            "category": [
-                "Machine Learning",
-                "Deep Learning"
             ],
-            "technologies": [
-                "Python",
-                "TensorFlow",
-                "Keras",
-                "NumPy",
-                "Pandas"
-            ],
-            "description": "Developed a CNN-based human activity recognition system using motion sensor data.",
-            "highlights": [
-                "Processed multi-subject sensor data using overlapping windows",
-                "Evaluated classification performance using confusion matrices and validation metrics",
-                "Improved classification accuracy from approximately 72 percent to 97 percent"
-            ]
+            "start": "2025-09",
+            "end": "2025-12",
+            "status": "Completed"
         },
         {
             "id": "nstc-research",
@@ -284,7 +386,34 @@
                 "Selected as an NSTC undergraduate research project",
                 "Analyzed athlete stability, consistency, and explosiveness from videos",
                 "Combined pose estimation with athlete performance analytics"
-            ]
+            ],
+            "start": "2024-07",
+            "end": "2025-02",
+            "status": "Completed"
+        },
+        {
+            "id": "human-activity-recognition",
+            "name": "Human Activity Recognition Using CNN and Sensor Data",
+            "category": [
+                "Machine Learning",
+                "Deep Learning"
+            ],
+            "technologies": [
+                "Python",
+                "TensorFlow",
+                "Keras",
+                "NumPy",
+                "Pandas"
+            ],
+            "description": "Developed a CNN-based human activity recognition system using motion sensor data.",
+            "highlights": [
+                "Processed multi-subject sensor data using overlapping windows",
+                "Evaluated classification performance using confusion matrices and validation metrics",
+                "Improved classification accuracy from approximately 72 percent to 97 percent"
+            ],
+            "start": "2023-09",
+            "end": "2023-12",
+            "status": "Completed"
         }
     ]
 }
